@@ -14,7 +14,7 @@ function App() {
     <AppWrapper>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="/home" element={<HomePage />} />
+          <Route index element={<HomePage />} />
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
           {/* <Route path=":half" element={<HalfPage />} /> */}
