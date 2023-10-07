@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from './components/SharedLayout/SharedLayout';
-import FirstPage from './pages/FirstPage/FirstPage';
-import SecondPage from './pages/SecondPage/SecondPage';
-import HalfPage from './pages/HalfPage/HalfPage';
+import HomePage from './pages/HomePage/HomePage';
+import CatalogPage from './pages/CatalogPage/CatalogPage';
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import { AppWrapper } from './App.styled';
 
@@ -14,10 +14,11 @@ function App() {
     <AppWrapper>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="/first" element={<FirstPage />} />
-          <Route path="/second" element={<SecondPage />}>
-            <Route path=":half" element={<HalfPage />} />
-          </Route>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
+          {/* <Route path=":half" element={<HalfPage />} /> */}
+          {/* </Route> */}
 
           <Route path="*" element={<ErrorPage />} />
         </Route>

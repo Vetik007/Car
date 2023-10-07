@@ -1,9 +1,9 @@
 body {
-  background-color: #000;
-  background-image: url('./assets/background.png');
+  background-color: #ffffff;
+  /* background-image: url('./assets/background.png');
   background-size: auto 100%;
   background-position: center center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -18,7 +18,7 @@ h4,
 h5,
 h6,
 p {
-  margin-top: 0;
+  margin: 0;
 }
 a {
   text-decoration: none;
