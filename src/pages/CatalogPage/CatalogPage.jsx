@@ -30,16 +30,6 @@ const CatalogPage = () => {
   const carList = useSelector((state) => state.car.carData);
   const [displayedItems, setDisplayedItems] = useState(8);
 
-  const [isModalOpen, setIsModalOpen] = useState(
-    new Array(carList.length).fill(false),
-  );
-
-  const toggleOpen = (index) => {
-    const newIsModalOpen = [...isModalOpen];
-    newIsModalOpen[index] = !newIsModalOpen[index];
-    setIsModalOpen(newIsModalOpen);
-  };
-
   useEffect(() => {
     dispatch(getCarList());
 
@@ -54,6 +44,16 @@ const CatalogPage = () => {
       });
     }
   }, [dispatch]);
+
+  const [isModalOpen, setIsModalOpen] = useState(
+    new Array(carList.length).fill(false),
+  );
+
+  const toggleOpen = (index) => {
+    const newIsModalOpen = [...isModalOpen];
+    newIsModalOpen[index] = !newIsModalOpen[index];
+    setIsModalOpen(newIsModalOpen);
+  };
 
   useEffect(() => {
     localStorage.setItem('isFavorites', JSON.stringify(favoriteIds));
