@@ -38,11 +38,7 @@ const CatalogPage = () => {
     newIsModalOpen[index] = !newIsModalOpen[index];
     setIsModalOpen(newIsModalOpen);
   };
-
-   useEffect(() => {
-    localStorage.setItem('isFavorites', JSON.stringify(favoriteIds));
-  }, [favoriteIds]);
-
+   
 useEffect(() => {
     dispatch(getCarList());
 
@@ -58,7 +54,9 @@ useEffect(() => {
     }
   }, [dispatch]);
 
- 
+ useEffect(() => {
+    localStorage.setItem('isFavorites', JSON.stringify(favoriteIds));
+  }, [favoriteIds]);
 
        
   return (
