@@ -14,15 +14,6 @@ const carSlice = createSlice({
   initialState: initialState,
 
   reducers: {
-    // toggleFavorite(state, { payload }) {
-    //   const index = state.indexOf(payload);
-    //   if (index === -1) {
-    //     return [...state, payload];
-    //   } else {
-    //     return state.filter((item) => item !== payload);
-    //   }
-    // },
-
     toggleFavorite(state, action) {
       if (state.isFavorites.includes(action.payload)) {
         state.isFavorites = state.isFavorites.filter(

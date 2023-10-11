@@ -1,11 +1,13 @@
 import { createSelector } from 'reselect';
 
-const selectCarListData = (state) => state.car.carData;
-export const getIdFavorites = (state) => state.car.isFavorites;
+const selectFavoriteCars = (state) => state.car.carData;
+const selectSavedFavorites = (state) => state.car.isFavorites;
 
-export const selectFavoriteCars = createSelector(
-  [selectCarListData, getIdFavorites],
-  (cars, favoriteIds) => {
-    return cars.filter((car) => favoriteIds.includes(car.id));
+const makeFilteredCars = createSelector(
+  [selectFavoriteCars, selectSavedFavorites],
+  (carData, savedFavorites) => {
+    return carData.filter((car) => savedFavorites.includes(car.id));
   },
 );
+
+export default makeFilteredCars;

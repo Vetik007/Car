@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 // export const Container = styled.div`
 //   display: flex;
@@ -97,7 +98,6 @@ export const InfoText = styled.p`
   color: #12141780 50%;
 `;
 
-
 export const FavoriteButton = styled.button`
   position: absolute;
   top: 16px;
@@ -136,4 +136,24 @@ export const CardButton = styled.button`
   line-height: 0, 7;
   font-style: normal;
   color: #ffffff;
+`;
+
+export const MessadgeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-left: auto;
+  align-items: center;
+  margin-top: 50px;
+`;
+
+export const Messadge = styled.p`
+  font-size: 30px;
+  margin-bottom: 20px;
+`;
+
+export const StyleLink = styled(Link)`
+  font-size: 30px;
+  font-weight: bold;
 `;

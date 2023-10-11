@@ -1,12 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { nanoid } from 'nanoid';
-import { ReactComponent as FavoriteButtonIcon } from '../../Img/FavoriteButtonIcon.svg';
-// import { selectFavoriteCars } from '../../redux/selector/selectCarListData';
-import { ReactComponent as FavoriteButtonBlueIcon } from '../../Img/FavoriteButtonBlueIcon.svg';
-import Modal from '../../components/Modal/Modal';
 
 import { getCarList } from '../../redux/operation';
+import { nanoid } from 'nanoid';
 
+import Modal from '../../components/Modal/Modal';
+// import makeFilteredCars from '../../redux/selector/selectCarListData';
+
+import { ReactComponent as FavoriteButtonIcon } from '../../Img/FavoriteButtonIcon.svg';
+import { ReactComponent as FavoriteButtonBlueIcon } from '../../Img/FavoriteButtonBlueIcon.svg';
 import defaultImg from '../../Img/defolt.jpg';
 
 import {
@@ -18,6 +19,9 @@ import {
   FavoriteButton,
   LoadButton,
   CardButton,
+  MessadgeWrapper,
+  Messadge,
+  StyleLink,
 } from './FavoritesPage.styled';
 import { useEffect, useState } from 'react';
 
@@ -25,6 +29,8 @@ const FavoritesPage = () => {
   const [savedFavorites, setSavedFavorites] = useState(
     JSON.parse(localStorage.getItem('isFavorites')) || [],
   );
+
+  // const filteredCars = useSelector(makeFilteredCars);
 
   const filteredCars = useSelector((state) =>
     state.car.carData.filter((car) => savedFavorites.includes(car.id)),
@@ -124,7 +130,12 @@ const FavoritesPage = () => {
             </Items>
           ))
         ) : (
-          <p>Loading...</p>
+          <MessadgeWrapper>
+            <Messadge>No favorite cars found. </Messadge>
+            <p>
+              <StyleLink to="/catalog">Go to Catalog</StyleLink>
+            </p>
+          </MessadgeWrapper>
         )}
       </List>
 
