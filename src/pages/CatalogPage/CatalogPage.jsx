@@ -4,7 +4,6 @@ import { nanoid } from 'nanoid';
 import { getCarList } from '../../redux/operation';
 import { ReactComponent as FavoriteButtonIcon } from '../../Img/FavoriteButtonIcon.svg';
 import { ReactComponent as FavoriteButtonBlueIcon } from '../../Img/FavoriteButtonBlueIcon.svg';
-// import Modal from '../../components/Modal/Modal';
 import Modal from '../../components/Modal/Modal';
 
 import { toggleFavorite } from '../../redux/carSlice';
@@ -31,6 +30,16 @@ const CatalogPage = () => {
   const carList = useSelector((state) => state.car.carData);
   const [displayedItems, setDisplayedItems] = useState(8);
 
+  const [isModalOpen, setIsModalOpen] = useState(
+    new Array(carList.length).fill(false),
+  );
+
+  const toggleOpen = (index) => {
+    const newIsModalOpen = [...isModalOpen];
+    newIsModalOpen[index] = !newIsModalOpen[index];
+    setIsModalOpen(newIsModalOpen);
+  };
+
   useEffect(() => {
     dispatch(getCarList());
 
@@ -46,27 +55,12 @@ const CatalogPage = () => {
     }
   }, [dispatch]);
 
-  const [isModalOpen, setIsModalOpen] = useState(
-    new Array(carList.length).fill(false),
-  );
-
-  const toggleOpen = (index) => {
-    const newIsModalOpen = [...isModalOpen];
-    newIsModalOpen[index] = !newIsModalOpen[index];
-    setIsModalOpen(newIsModalOpen);
-  };
-
   useEffect(() => {
     localStorage.setItem('isFavorites', JSON.stringify(favoriteIds));
   }, [favoriteIds]);
 
-  useEffect(() => {
-    dispatch(getCarList());
-  }, [dispatch]);
-
   return (
     <Container className="container">
-      {/* <Title>Catalog Page</Title> */}
       <List className="list">
         {carList && carList.length > 0 ? (
           carList.slice(0, displayedItems).map((car, index) => (

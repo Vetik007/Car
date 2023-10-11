@@ -6,13 +6,12 @@ import { ReactComponent as FavoriteButtonBlueIcon } from '../../Img/FavoriteButt
 import Modal from '../../components/Modal/Modal';
 
 import { getCarList } from '../../redux/operation';
-import { toggleFavorite } from '../../redux/carSlice';
+
 import defaultImg from '../../Img/defolt.jpg';
 
 import {
   Container,
   Items,
-  Title,
   List,
   InfoText,
   WrapperInfo,
@@ -23,19 +22,33 @@ import {
 import { useEffect, useState } from 'react';
 
 const FavoritesPage = () => {
-  const [imageLoadError, setImageLoadError] = useState(false);
-  // const allCars = useSelector(selectFavoriteCars);
-  // console.log('allCars', allCars);
-  const [displayedItems, setDisplayedItems] = useState(8);
-  const dispatch = useDispatch();
+  const [savedFavorites, setSavedFavorites] = useState(
+    JSON.parse(localStorage.getItem('isFavorites')) || [],
+  );
 
-  const savedFavorites = JSON.parse(localStorage.getItem('isFavorites')) || [];
-
-  // Filtering cars from the Redux state based on saved favorite identifiers
   const filteredCars = useSelector((state) =>
     state.car.carData.filter((car) => savedFavorites.includes(car.id)),
   );
   // console.log('filteredCars', filteredCars);
+
+  const [imageLoadError, setImageLoadError] = useState(false);
+
+  const [displayedItems, setDisplayedItems] = useState(8);
+  const dispatch = useDispatch();
+
+  const toggleFavoriteCar = (carId) => {
+    // Checking if the car is in the favorites list
+    const isFavorite = savedFavorites.includes(carId);
+
+    // If the car is on the list, delete it
+    if (isFavorite) {
+      const updatedFavorites = savedFavorites.filter((id) => id !== carId);
+      setSavedFavorites(updatedFavorites);
+
+      // Updating the list of favorite cars in the local storage
+      localStorage.setItem('isFavorites', JSON.stringify(updatedFavorites));
+    }
+  };
 
   const [isModalOpen, setIsModalOpen] = useState(
     new Array(filteredCars.length).fill(false),
@@ -53,7 +66,6 @@ const FavoritesPage = () => {
 
   return (
     <Container className="container">
-      <Title>Catalog Page</Title>
       <List className="list">
         {filteredCars && filteredCars.length > 0 ? (
           filteredCars.slice(0, displayedItems).map((car, index) => (
@@ -70,7 +82,7 @@ const FavoritesPage = () => {
               />
               <FavoriteButton
                 type="button"
-                onClick={() => dispatch(toggleFavorite(car.id))}
+                onClick={() => toggleFavoriteCar(car.id)}
                 // isFavorite={!favoriteIds.includes(car.id)}
               >
                 {!savedFavorites.includes(car.id) ? (
