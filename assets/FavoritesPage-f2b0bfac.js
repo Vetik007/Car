@@ -1,4 +1,4 @@
-import{n,L as w,r as o,u as v,g as b,j as t}from"./index-02e92241.js";import{u as S,d as k,S as F,a as I,M as C,n as L}from"./defolt-85e9869f.js";const M=n.div`
+import{n,L as w,r as o,u as v,g as b,j as t}from"./index-a8a2f0f7.js";import{u as S,d as k,S as F,a as I,M as C,n as L}from"./defolt-484b2857.js";const M=n.div`
   /* position: relative; */
   /* overflow-x: hidden; */
   height: 100vh;
@@ -89,7 +89,7 @@ import{n,L as w,r as o,u as v,g as b,j as t}from"./index-02e92241.js";import{u a
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  margin-right: auto;
   margin-left: auto;
   align-items: center;
   margin-top: 50px;
