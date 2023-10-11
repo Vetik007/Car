@@ -48,11 +48,16 @@ const CatalogPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(
     new Array(carList.length).fill(false),
   );
+
   const toggleOpen = (index) => {
     const newIsModalOpen = [...isModalOpen];
     newIsModalOpen[index] = !newIsModalOpen[index];
     setIsModalOpen(newIsModalOpen);
   };
+
+  useEffect(() => {
+    localStorage.setItem('isFavorites', JSON.stringify(favoriteIds));
+  }, [favoriteIds]);
 
   useEffect(() => {
     dispatch(getCarList());
