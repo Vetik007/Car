@@ -1,37 +1,59 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getCarList } from './operation';
+import isEqual from 'lodash/isEqual';
 
 const initialState = {
-  adverts: {
-    CarList: {
-      data: null,
-      loading: 'idle',
-      error: null,
-    },
-  },
+  carData: [],
+  isLoading: false,
+  error: null,
+  isFavorites: [],
 };
 
 const carSlice = createSlice({
   name: 'adverts',
   initialState: initialState,
 
+  reducers: {
+    // toggleFavorite(state, { payload }) {
+    //   const index = state.indexOf(payload);
+    //   if (index === -1) {
+    //     return [...state, payload];
+    //   } else {
+    //     return state.filter((item) => item !== payload);
+    //   }
+    // },
+
+    toggleFavorite(state, action) {
+      if (state.isFavorites.includes(action.payload)) {
+        state.isFavorites = state.isFavorites.filter(
+          (id) => id !== action.payload,
+        );
+      } else {
+        state.isFavorites.push(action.payload);
+      }
+    },
+  },
+
   extraReducers: (builder) => {
     builder
       .addCase(getCarList.pending, (state) => {
-        state.adverts.CarList.loading = 'pending';
+        state.isLoading = true;
       })
       .addCase(getCarList.fulfilled, (state, action) => {
-        state.adverts.CarList.loading = 'fulfilled';
-        state.adverts.CarList.data = action.payload;
-        state.adverts.CarList.error = null;
+        state.isLoading = false;
+        // state.carData = action.payload;
+        state.error = null;
+        if (!isEqual(state.carData, action.payload)) {
+          state.carData.push(...action.payload);
+        }
       })
       .addCase(getCarList.rejected, (state, action) => {
-        state.adverts.CarList.loading = 'rejected';
-        state.adverts.CarList.error = action.error.message;
+        state.isLoading = false;
+        state.error = action.payload;
       });
   },
 });
 
-// export const { reducer: carSlice } = carSlice;
+export const { toggleFavorite } = carSlice.actions;
+
 export const carReduser = carSlice.reducer;
-// export default carRedusers;

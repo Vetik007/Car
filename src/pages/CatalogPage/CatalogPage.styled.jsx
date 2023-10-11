@@ -25,6 +25,12 @@ export const Container = styled.div`
     min-width: 704px; /* Адаптивная ширина */
   }
 
+  @media screen and (min-width: 1180px) {
+    /* Ширина для экранов от 768px до 1439px */
+    margin: 0;
+    min-width: 1180px; /* Адаптивная ширина */
+  }
+
   @media screen and (min-width: 1440px) {
     /* Ширина для экранов 1440px и более */
     max-width: 1440px; /* Максимальная ширина */
@@ -111,6 +117,10 @@ export const CardButton = styled.button`
   line-height: 0, 7;
   font-style: normal;
   color: #ffffff;
+`;
+
+export const Images = styled.img`
+  border-radius: 14px;
 `;
 
 // export const StyledLink = styled(Link)`
