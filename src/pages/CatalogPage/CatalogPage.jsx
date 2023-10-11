@@ -30,7 +30,16 @@ const CatalogPage = () => {
   const carList = useSelector((state) => state.car.carData);
   const [displayedItems, setDisplayedItems] = useState(8);
 
-  useEffect(() => {
+  const [isModalOpen, setIsModalOpen] = useState(
+    new Array(carList.length).fill(false),
+  );
+  const toggleOpen = (index) => {
+    const newIsModalOpen = [...isModalOpen];
+    newIsModalOpen[index] = !newIsModalOpen[index];
+    setIsModalOpen(newIsModalOpen);
+  };
+
+useEffect(() => {
     dispatch(getCarList());
 
     // Loading data from local storage when the page is loaded
@@ -44,17 +53,8 @@ const CatalogPage = () => {
       });
     }
   }, [dispatch]);
-
-  const [isModalOpen, setIsModalOpen] = useState(
-    new Array(carList.length).fill(false),
-  );
-
-  const toggleOpen = (index) => {
-    const newIsModalOpen = [...isModalOpen];
-    newIsModalOpen[index] = !newIsModalOpen[index];
-    setIsModalOpen(newIsModalOpen);
-  };
-
+  
+  
   useEffect(() => {
     localStorage.setItem('isFavorites', JSON.stringify(favoriteIds));
   }, [favoriteIds]);
