@@ -142,7 +142,7 @@ export const MessadgeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  margin-right: auto;
   margin-left: auto;
   align-items: center;
   margin-top: 50px;
