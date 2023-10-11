@@ -1,4 +1,4 @@
-import{n as i,r as o,u as c,g as j,t as h,j as e}from"./index-c4be7e8d.js";import{u as w,d as y,S as b,a as v,M as I,n as k}from"./defolt-6114de43.js";const S=i.div`
+import{n as s,r as a,u as h,g as x,t as l,j as e}from"./index-5af99d4c.js";import{u as w,d as y,S as b,a as v,M as I,n as S}from"./defolt-0d8e1727.js";const k=s.div`
   /* position: relative; */
   /* overflow-x: hidden; */
   height: 100vh;
@@ -33,21 +33,21 @@ import{n as i,r as o,u as c,g as j,t as h,j as e}from"./index-c4be7e8d.js";impor
     max-width: 1440px; /* Максимальная ширина */
     width: 100%; /* Занимать всю доступную ширину */
   }
-`,L=i.ul`
+`,E=s.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 29px;
   margin-bottom: 100px;
-`,C=i.li`
+`,F=s.li`
   position: relative;
   width: 274px;
   height: 426px;
   text-align: center;
-`,E=i.div`
+`,L=s.div`
   margin-top: 14px;
   margin-bottom: 28px;
-`,x=i.p`
+`,g=s.p`
   display: flex;
   justify-content: space-around;
   margin-top: 8px;
@@ -57,13 +57,13 @@ import{n as i,r as o,u as c,g as j,t as h,j as e}from"./index-c4be7e8d.js";impor
   line-height: 0, 7;
   font-style: normal;
   color: #12141780 50%;
-`,F=i.button`
+`,C=s.button`
   position: absolute;
   top: 16px;
   right: 15px;
   background-color: transparent;
   border: none;
-`,M=i.button`
+`,M=s.button`
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -76,7 +76,7 @@ import{n as i,r as o,u as c,g as j,t as h,j as e}from"./index-c4be7e8d.js";impor
   font-style: normal;
   color: #3470ff;
   text-decoration: underline;
-`,O=i.button`
+`,O=s.button`
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -91,6 +91,6 @@ import{n as i,r as o,u as c,g as j,t as h,j as e}from"./index-c4be7e8d.js";impor
   line-height: 0, 7;
   font-style: normal;
   color: #ffffff;
-`,B=i.img`
+`,B=s.img`
   border-radius: 14px;
-`,D=()=>{const[g,m]=o.useState(!1),r=c(t=>t.car.isFavorites),a=w(),s=c(t=>t.car.carData),[l,f]=o.useState(8),[d,u]=o.useState(new Array(s.length).fill(!1)),p=t=>{const n=[...d];n[t]=!n[t],u(n)};return o.useEffect(()=>{a(j());const t=JSON.parse(localStorage.getItem("isFavorites")||"[]");t.length>0&&t.forEach(n=>{a(h(n))})},[a]),o.useEffect(()=>{localStorage.setItem("isFavorites",JSON.stringify(r))},[r]),e.jsxs(S,{className:"container",children:[e.jsx(L,{className:"list",children:s&&s.length>0?s.slice(0,l).map((t,n)=>e.jsxs(C,{className:"blok",children:[e.jsx(B,{src:g?y:t.img,alt:t.make,width:274,height:268,onError:()=>{m(!0)}}),e.jsx(F,{type:"button",onClick:()=>a(h(t.id)),children:r.includes(t.id)?e.jsx(v,{width:"16",height:"16"}):e.jsx(b,{width:"16",height:"16"})}),e.jsxs(E,{children:[e.jsxs("h3",{children:[e.jsx("span",{children:t.make})," ",e.jsx("span",{children:t.model}),e.jsx("span",{children:t.year}),t.rentalPrice]}),e.jsxs(x,{children:[e.jsx("span",{children:t.address.split(", ")[1]})," |",e.jsx("span",{children:t.address.split(", ")[2]})," |",e.jsx("span",{children:t.rentalCompany})]}),e.jsxs(x,{children:[e.jsx("span",{children:t.type})," | ",e.jsx("span",{children:t.model})," |",e.jsx("span",{children:t.id})," |",e.jsx("span",{children:t.functionalities[0].split(" ").slice(0,2).join(" ")})]})]}),e.jsx(O,{type:"button",onClick:()=>p(n),children:"Learn more"}),d[n]&&e.jsx(I,{toggleOpen:()=>p(n),data:t})]},k())):e.jsx("p",{children:"Loading..."})}),l<(s?s.length:0)&&e.jsx(M,{type:"button",onClick:()=>f(t=>t+8),children:"Load more"})]})};export{D as default};
+`,D=()=>{const[m,f]=a.useState(!1),r=h(t=>t.car.isFavorites),i=w(),o=h(t=>t.car.carData),[d,u]=a.useState(8);a.useEffect(()=>{i(x());const t=JSON.parse(localStorage.getItem("isFavorites")||"[]");t.length>0&&t.forEach(n=>{i(l(n))})},[i]);const[p,j]=a.useState(new Array(o.length).fill(!1)),c=t=>{const n=[...p];n[t]=!n[t],j(n)};return a.useEffect(()=>{i(x());const t=JSON.parse(localStorage.getItem("isFavorites")||"[]");t.length>0&&t.forEach(n=>{i(l(n))})},[i]),a.useEffect(()=>{localStorage.setItem("isFavorites",JSON.stringify(r))},[r]),e.jsxs(k,{className:"container",children:[e.jsx(E,{className:"list",children:o&&o.length>0?o.slice(0,d).map((t,n)=>e.jsxs(F,{className:"blok",children:[e.jsx(B,{src:m?y:t.img,alt:t.make,width:274,height:268,onError:()=>{f(!0)}}),e.jsx(C,{type:"button",onClick:()=>i(l(t.id)),children:r.includes(t.id)?e.jsx(v,{width:"16",height:"16"}):e.jsx(b,{width:"16",height:"16"})}),e.jsxs(L,{children:[e.jsxs("h3",{children:[e.jsx("span",{children:t.make})," ",e.jsx("span",{children:t.model}),e.jsx("span",{children:t.year}),t.rentalPrice]}),e.jsxs(g,{children:[e.jsx("span",{children:t.address.split(", ")[1]})," |",e.jsx("span",{children:t.address.split(", ")[2]})," |",e.jsx("span",{children:t.rentalCompany})]}),e.jsxs(g,{children:[e.jsx("span",{children:t.type})," | ",e.jsx("span",{children:t.model})," |",e.jsx("span",{children:t.id})," |",e.jsx("span",{children:t.functionalities[0].split(" ").slice(0,2).join(" ")})]})]}),e.jsx(O,{type:"button",onClick:()=>c(n),children:"Learn more"}),p[n]&&e.jsx(I,{toggleOpen:()=>c(n),data:t})]},S())):e.jsx("p",{children:"Loading..."})}),d<(o?o.length:0)&&e.jsx(M,{type:"button",onClick:()=>u(t=>t+8),children:"Load more"})]})};export{D as default};
