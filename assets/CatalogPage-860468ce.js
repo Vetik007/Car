@@ -1,4 +1,4 @@
-import{n as s,r as o,u as h,g as x,t as l,j as e}from"./index-f8de13f2.js";import{u as w,d as y,S as v,a as b,M as I,n as S}from"./defolt-9b6e5b33.js";const k=s.div`
+import{n as i,r as o,u as c,g as j,t as h,j as e}from"./index-c4be7e8d.js";import{u as w,d as y,S as b,a as v,M as I,n as k}from"./defolt-6114de43.js";const S=i.div`
   /* position: relative; */
   /* overflow-x: hidden; */
   height: 100vh;
@@ -33,21 +33,21 @@ import{n as s,r as o,u as h,g as x,t as l,j as e}from"./index-f8de13f2.js";impor
     max-width: 1440px; /* Максимальная ширина */
     width: 100%; /* Занимать всю доступную ширину */
   }
-`,E=s.ul`
+`,L=i.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 29px;
   margin-bottom: 100px;
-`,F=s.li`
+`,C=i.li`
   position: relative;
   width: 274px;
   height: 426px;
   text-align: center;
-`,L=s.div`
+`,E=i.div`
   margin-top: 14px;
   margin-bottom: 28px;
-`,g=s.p`
+`,x=i.p`
   display: flex;
   justify-content: space-around;
   margin-top: 8px;
@@ -57,13 +57,13 @@ import{n as s,r as o,u as h,g as x,t as l,j as e}from"./index-f8de13f2.js";impor
   line-height: 0, 7;
   font-style: normal;
   color: #12141780 50%;
-`,O=s.button`
+`,F=i.button`
   position: absolute;
   top: 16px;
   right: 15px;
   background-color: transparent;
   border: none;
-`,C=s.button`
+`,M=i.button`
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -76,7 +76,7 @@ import{n as s,r as o,u as h,g as x,t as l,j as e}from"./index-f8de13f2.js";impor
   font-style: normal;
   color: #3470ff;
   text-decoration: underline;
-`,M=s.button`
+`,O=i.button`
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -91,6 +91,6 @@ import{n as s,r as o,u as h,g as x,t as l,j as e}from"./index-f8de13f2.js";impor
   line-height: 0, 7;
   font-style: normal;
   color: #ffffff;
-`,N=s.img`
+`,B=i.img`
   border-radius: 14px;
-`,z=()=>{const[m,f]=o.useState(!1),r=h(t=>t.car.isFavorites),i=w(),a=h(t=>t.car.carData),[d,u]=o.useState(8);o.useEffect(()=>{i(x());const t=JSON.parse(localStorage.getItem("isFavorites")||"[]");t.length>0&&t.forEach(n=>{i(l(n))})},[i]);const[p,j]=o.useState(new Array(a.length).fill(!1)),c=t=>{const n=[...p];n[t]=!n[t],j(n)};return o.useEffect(()=>{localStorage.setItem("isFavorites",JSON.stringify(r))},[r]),o.useEffect(()=>{i(x());const t=JSON.parse(localStorage.getItem("isFavorites")||"[]");t.length>0&&t.forEach(n=>{i(l(n))})},[i]),o.useEffect(()=>{localStorage.setItem("isFavorites",JSON.stringify(r))},[r]),e.jsxs(k,{className:"container",children:[e.jsx(E,{className:"list",children:a&&a.length>0?a.slice(0,d).map((t,n)=>e.jsxs(F,{className:"blok",children:[e.jsx(N,{src:m?y:t.img,alt:t.make,width:274,height:268,onError:()=>{f(!0)}}),e.jsx(O,{type:"button",onClick:()=>i(l(t.id)),children:r.includes(t.id)?e.jsx(b,{width:"16",height:"16"}):e.jsx(v,{width:"16",height:"16"})}),e.jsxs(L,{children:[e.jsxs("h3",{children:[e.jsx("span",{children:t.make})," ",e.jsx("span",{children:t.model}),e.jsx("span",{children:t.year}),t.rentalPrice]}),e.jsxs(g,{children:[e.jsx("span",{children:t.address.split(", ")[1]})," |",e.jsx("span",{children:t.address.split(", ")[2]})," |",e.jsx("span",{children:t.rentalCompany})]}),e.jsxs(g,{children:[e.jsx("span",{children:t.type})," | ",e.jsx("span",{children:t.model})," |",e.jsx("span",{children:t.id})," |",e.jsx("span",{children:t.functionalities[0].split(" ").slice(0,2).join(" ")})]})]}),e.jsx(M,{type:"button",onClick:()=>c(n),children:"Learn more"}),p[n]&&e.jsx(I,{toggleOpen:()=>c(n),data:t})]},S())):e.jsx("p",{children:"Loading..."})}),d<(a?a.length:0)&&e.jsx(C,{type:"button",onClick:()=>u(t=>t+8),children:"Load more"})]})};export{z as default};
+`,D=()=>{const[g,m]=o.useState(!1),r=c(t=>t.car.isFavorites),a=w(),s=c(t=>t.car.carData),[l,f]=o.useState(8),[d,u]=o.useState(new Array(s.length).fill(!1)),p=t=>{const n=[...d];n[t]=!n[t],u(n)};return o.useEffect(()=>{a(j());const t=JSON.parse(localStorage.getItem("isFavorites")||"[]");t.length>0&&t.forEach(n=>{a(h(n))})},[a]),o.useEffect(()=>{localStorage.setItem("isFavorites",JSON.stringify(r))},[r]),e.jsxs(S,{className:"container",children:[e.jsx(L,{className:"list",children:s&&s.length>0?s.slice(0,l).map((t,n)=>e.jsxs(C,{className:"blok",children:[e.jsx(B,{src:g?y:t.img,alt:t.make,width:274,height:268,onError:()=>{m(!0)}}),e.jsx(F,{type:"button",onClick:()=>a(h(t.id)),children:r.includes(t.id)?e.jsx(v,{width:"16",height:"16"}):e.jsx(b,{width:"16",height:"16"})}),e.jsxs(E,{children:[e.jsxs("h3",{children:[e.jsx("span",{children:t.make})," ",e.jsx("span",{children:t.model}),e.jsx("span",{children:t.year}),t.rentalPrice]}),e.jsxs(x,{children:[e.jsx("span",{children:t.address.split(", ")[1]})," |",e.jsx("span",{children:t.address.split(", ")[2]})," |",e.jsx("span",{children:t.rentalCompany})]}),e.jsxs(x,{children:[e.jsx("span",{children:t.type})," | ",e.jsx("span",{children:t.model})," |",e.jsx("span",{children:t.id})," |",e.jsx("span",{children:t.functionalities[0].split(" ").slice(0,2).join(" ")})]})]}),e.jsx(O,{type:"button",onClick:()=>p(n),children:"Learn more"}),d[n]&&e.jsx(I,{toggleOpen:()=>p(n),data:t})]},k())):e.jsx("p",{children:"Loading..."})}),l<(s?s.length:0)&&e.jsx(M,{type:"button",onClick:()=>f(t=>t+8),children:"Load more"})]})};export{D as default};
