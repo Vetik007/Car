@@ -57,8 +57,11 @@ useEffect(() => {
   useEffect(() => {
     localStorage.setItem('isFavorites', JSON.stringify(favoriteIds));
   }, [favoriteIds]);
-  
-    
+
+  useEffect(() => {
+    dispatch(getCarList());
+  }, [dispatch]);
+      
   return (
     <Container className="container">
       <List className="list">
