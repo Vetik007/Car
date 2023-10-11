@@ -1,4 +1,4 @@
-import{n as s,r as a,u as h,g as x,t as l,j as e}from"./index-5af99d4c.js";import{u as w,d as y,S as b,a as v,M as I,n as S}from"./defolt-0d8e1727.js";const k=s.div`
+import{n as s,r as o,u as h,g as x,t as l,j as e}from"./index-f8de13f2.js";import{u as w,d as y,S as v,a as b,M as I,n as S}from"./defolt-9b6e5b33.js";const k=s.div`
   /* position: relative; */
   /* overflow-x: hidden; */
   height: 100vh;
@@ -57,13 +57,13 @@ import{n as s,r as a,u as h,g as x,t as l,j as e}from"./index-5af99d4c.js";impor
   line-height: 0, 7;
   font-style: normal;
   color: #12141780 50%;
-`,C=s.button`
+`,O=s.button`
   position: absolute;
   top: 16px;
   right: 15px;
   background-color: transparent;
   border: none;
-`,M=s.button`
+`,C=s.button`
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -76,7 +76,7 @@ import{n as s,r as a,u as h,g as x,t as l,j as e}from"./index-5af99d4c.js";impor
   font-style: normal;
   color: #3470ff;
   text-decoration: underline;
-`,O=s.button`
+`,M=s.button`
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -91,6 +91,6 @@ import{n as s,r as a,u as h,g as x,t as l,j as e}from"./index-5af99d4c.js";impor
   line-height: 0, 7;
   font-style: normal;
   color: #ffffff;
-`,B=s.img`
+`,N=s.img`
   border-radius: 14px;
-`,D=()=>{const[m,f]=a.useState(!1),r=h(t=>t.car.isFavorites),i=w(),o=h(t=>t.car.carData),[d,u]=a.useState(8);a.useEffect(()=>{i(x());const t=JSON.parse(localStorage.getItem("isFavorites")||"[]");t.length>0&&t.forEach(n=>{i(l(n))})},[i]);const[p,j]=a.useState(new Array(o.length).fill(!1)),c=t=>{const n=[...p];n[t]=!n[t],j(n)};return a.useEffect(()=>{i(x());const t=JSON.parse(localStorage.getItem("isFavorites")||"[]");t.length>0&&t.forEach(n=>{i(l(n))})},[i]),a.useEffect(()=>{localStorage.setItem("isFavorites",JSON.stringify(r))},[r]),e.jsxs(k,{className:"container",children:[e.jsx(E,{className:"list",children:o&&o.length>0?o.slice(0,d).map((t,n)=>e.jsxs(F,{className:"blok",children:[e.jsx(B,{src:m?y:t.img,alt:t.make,width:274,height:268,onError:()=>{f(!0)}}),e.jsx(C,{type:"button",onClick:()=>i(l(t.id)),children:r.includes(t.id)?e.jsx(v,{width:"16",height:"16"}):e.jsx(b,{width:"16",height:"16"})}),e.jsxs(L,{children:[e.jsxs("h3",{children:[e.jsx("span",{children:t.make})," ",e.jsx("span",{children:t.model}),e.jsx("span",{children:t.year}),t.rentalPrice]}),e.jsxs(g,{children:[e.jsx("span",{children:t.address.split(", ")[1]})," |",e.jsx("span",{children:t.address.split(", ")[2]})," |",e.jsx("span",{children:t.rentalCompany})]}),e.jsxs(g,{children:[e.jsx("span",{children:t.type})," | ",e.jsx("span",{children:t.model})," |",e.jsx("span",{children:t.id})," |",e.jsx("span",{children:t.functionalities[0].split(" ").slice(0,2).join(" ")})]})]}),e.jsx(O,{type:"button",onClick:()=>c(n),children:"Learn more"}),p[n]&&e.jsx(I,{toggleOpen:()=>c(n),data:t})]},S())):e.jsx("p",{children:"Loading..."})}),d<(o?o.length:0)&&e.jsx(M,{type:"button",onClick:()=>u(t=>t+8),children:"Load more"})]})};export{D as default};
+`,z=()=>{const[m,f]=o.useState(!1),r=h(t=>t.car.isFavorites),i=w(),a=h(t=>t.car.carData),[d,u]=o.useState(8);o.useEffect(()=>{i(x());const t=JSON.parse(localStorage.getItem("isFavorites")||"[]");t.length>0&&t.forEach(n=>{i(l(n))})},[i]);const[p,j]=o.useState(new Array(a.length).fill(!1)),c=t=>{const n=[...p];n[t]=!n[t],j(n)};return o.useEffect(()=>{localStorage.setItem("isFavorites",JSON.stringify(r))},[r]),o.useEffect(()=>{i(x());const t=JSON.parse(localStorage.getItem("isFavorites")||"[]");t.length>0&&t.forEach(n=>{i(l(n))})},[i]),o.useEffect(()=>{localStorage.setItem("isFavorites",JSON.stringify(r))},[r]),e.jsxs(k,{className:"container",children:[e.jsx(E,{className:"list",children:a&&a.length>0?a.slice(0,d).map((t,n)=>e.jsxs(F,{className:"blok",children:[e.jsx(N,{src:m?y:t.img,alt:t.make,width:274,height:268,onError:()=>{f(!0)}}),e.jsx(O,{type:"button",onClick:()=>i(l(t.id)),children:r.includes(t.id)?e.jsx(b,{width:"16",height:"16"}):e.jsx(v,{width:"16",height:"16"})}),e.jsxs(L,{children:[e.jsxs("h3",{children:[e.jsx("span",{children:t.make})," ",e.jsx("span",{children:t.model}),e.jsx("span",{children:t.year}),t.rentalPrice]}),e.jsxs(g,{children:[e.jsx("span",{children:t.address.split(", ")[1]})," |",e.jsx("span",{children:t.address.split(", ")[2]})," |",e.jsx("span",{children:t.rentalCompany})]}),e.jsxs(g,{children:[e.jsx("span",{children:t.type})," | ",e.jsx("span",{children:t.model})," |",e.jsx("span",{children:t.id})," |",e.jsx("span",{children:t.functionalities[0].split(" ").slice(0,2).join(" ")})]})]}),e.jsx(M,{type:"button",onClick:()=>c(n),children:"Learn more"}),p[n]&&e.jsx(I,{toggleOpen:()=>c(n),data:t})]},S())):e.jsx("p",{children:"Loading..."})}),d<(a?a.length:0)&&e.jsx(C,{type:"button",onClick:()=>u(t=>t+8),children:"Load more"})]})};export{z as default};
